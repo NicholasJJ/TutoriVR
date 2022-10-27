@@ -41,6 +41,8 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
     // Update is called once per frame
     void Update()
     {
+        if (rightController == null) rightController = GameObject.Find("Controller (brush)").transform;
+        if (leftController == null) leftController = GameObject.Find("Controller (wand)").transform;
         if (head == null && GameObject.Find("(RenderWrapper Camera)") != null) head = GameObject.Find("(RenderWrapper Camera)").transform;
         Debug.DrawRay(rightController.position, rightController.forward, Color.red);
         // bool rtVal = triggerAction.GetAxis(SteamVR_Input_Sources.RightHand) > 0.99f;

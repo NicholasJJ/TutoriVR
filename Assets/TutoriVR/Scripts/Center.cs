@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Center : MonoBehaviour
 {
-    public GameObject L;
-    public GameObject R;
+    //public GameObject L;
+    //public GameObject R;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +15,9 @@ public class Center : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 avgPosition = R.transform.position;
+        //Vector3 avgPosition = R.transform.position;
         //Debug.Log(avgPosition.z);
         //Debug.Log(avgPosition);
-        transform.localPosition = new Vector3(avgPosition.x, avgPosition.y, avgPosition.z);
+        //transform.localPosition = new Vector3(avgPosition.x, avgPosition.y, avgPosition.z);
     }
 }

@@ -28,6 +28,15 @@ public class Record : MonoBehaviour, IRunnable
         currentstate = false;
          gameObject.GetComponent<Renderer>().material = recordButton;   
     }
+
+    void Update()
+    {
+        if (transform.parent == null)
+        {
+            transform.parent = appInfo.GetLeftController();
+        }
+        Debug.LogError(transform.parent);
+    }
     
     private void SetChildrenActive(bool setting)
     {
