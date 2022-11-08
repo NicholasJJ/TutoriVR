@@ -33690,6 +33690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf919ae2b02664bae8853c93e4a07148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lengthLimit: -1
 --- !u!102 &1441595437110688099
 TextMesh:
   serializedVersion: 3
@@ -33852,6 +33853,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa65868c293edd4ab536e8d11aab682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showButton: {fileID: 0}
+  closeButton: {fileID: 0}
+  playFromFile: 0
+  readTutori: 0
+  buttonRecreation: {fileID: 0}
+  VideoPlayer: {fileID: 0}
+  VideoPlayer_stereo: {fileID: 0}
+  microphone_audio: {fileID: 0}
+  awareness_widget: {fileID: 0}
+  perspective_widget: {fileID: 0}
+  repCam: {fileID: 0}
 --- !u!4 &1441595437152660638
 Transform:
   m_ObjectHideFlags: 0
@@ -33985,6 +33997,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c3d779976080943aff4b96a213cd25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoPlayerCtrl: {fileID: 0}
+  startPoint: {fileID: 0}
+  endPoint: {fileID: 0}
+  target: {fileID: 0}
 --- !u!65 &1441595437207164832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34466,6 +34482,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3f95f45d4214d0298b93b7cab11c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointer: {fileID: 0}
+  exclusionLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  rayLength: 500
+  displayRayLength: 50
 --- !u!114 &1441595437333442749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34478,6 +34500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6ab28da6ff4bd488804a38d03037e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lLine: {fileID: 0}
+  rLine: {fileID: 0}
 --- !u!4 &1441595437346350570
 Transform:
   m_ObjectHideFlags: 0
@@ -34744,6 +34768,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358f966ab72cc694da8ce8437159ece6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HMD: {fileID: 0}
+  xOffset: 0
 --- !u!114 &1441595437568418004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34893,6 +34919,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d633066aa465e4681c98957b6fbf35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoPlayerCtrl: {fileID: 0}
+  startPoint: {fileID: 0}
+  endPoint: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!1 &1441595437568418013
 GameObject:
   m_ObjectHideFlags: 0
@@ -35069,6 +35099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e225e3462d6182044a9ed63b282f8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recorder: {fileID: 0}
+  alertColor: 0
 --- !u!23 &1441595437735859217
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35234,6 +35266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e225e3462d6182044a9ed63b282f8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recorder: {fileID: 0}
+  alertColor: 0
 --- !u!65 &1441595437754242027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35319,6 +35353,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06aaae1962329a54385d74a11e55aed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recordButton: {fileID: 0}
+  stopButton: {fileID: 0}
+  Event: {fileID: 0}
 --- !u!20 &1441595437890711455
 Camera:
   m_ObjectHideFlags: 0
@@ -35437,6 +35474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec314817bd067b4f99bbd21d0f8342e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Event: {fileID: 0}
+  ledger: {fileID: 0}
 --- !u!114 &1441595437890711461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35479,6 +35518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d983b75bb0e794db37f0b46e8a115f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Event: {fileID: 0}
+  tracker: {fileID: 0}
 --- !u!1 &1441595437890711465
 GameObject:
   m_ObjectHideFlags: 0
@@ -35515,6 +35556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358f966ab72cc694da8ce8437159ece6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HMD: {fileID: 0}
+  xOffset: 0
 --- !u!65 &1441595437961725366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36115,6 +36158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e225e3462d6182044a9ed63b282f8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recorder: {fileID: 0}
+  alertColor: 0
 --- !u!1 &1441595438044624785
 GameObject:
   m_ObjectHideFlags: 0
@@ -36340,6 +36385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6ab28da6ff4bd488804a38d03037e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lLine: {fileID: 0}
+  rLine: {fileID: 0}
 --- !u!114 &1441595438097208382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36352,6 +36399,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3f95f45d4214d0298b93b7cab11c15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointer: {fileID: 0}
+  exclusionLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  rayLength: 500
+  displayRayLength: 50
 --- !u!114 &1441595438097208383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37291,6 +37344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78add0c2b65c8da4ba267c955b6ab8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  awareness_widget: {fileID: 0}
 --- !u!23 &1441595438245181856
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37414,6 +37468,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656364a7a5ef0e242988c7687de5d182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
+  soundPath: 
 --- !u!1 &1441595438249504894
 GameObject:
   m_ObjectHideFlags: 0
@@ -37553,6 +37610,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9967bf383e156c74b81952e14a2378e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoPlayerCtrl: {fileID: 0}
+  startPoint: {fileID: 0}
+  endPoint: {fileID: 0}
 --- !u!114 &1441595438281461115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38030,6 +38090,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49864c47ca544e9a99726ecdf5cb241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lengthLimit: -1
 --- !u!102 &1441595438322346565
 TextMesh:
   serializedVersion: 3
@@ -38741,6 +38802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ea5290ca7c747419d80d00c7e32f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  perspective_widget: {fileID: 0}
 --- !u!114 &1441595438927306379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38876,6 +38938,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d13f41157d5f8c4883f3383f219ff98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasPos: {x: 0, y: 0, z: 0}
+  canvasRot: {x: 0, y: 0, z: 0}
 --- !u!224 &1441595439081704072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39005,6 +39069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31adc35de5598234f8e6af73dd6c533f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!4 &1441595439142439382
 Transform:
   m_ObjectHideFlags: 0
@@ -39382,6 +39447,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 3.6421
       objectReference: {fileID: 0}
+    - target: {fileID: 3100108756367445098, guid: 4cefd3d137eabaa44bd583fce191f27f,
+        type: 3}
+      propertyPath: vrSdk
+      value: 
+      objectReference: {fileID: 1412532062}
     - target: {fileID: 3100108756367445098, guid: 4cefd3d137eabaa44bd583fce191f27f,
         type: 3}
       propertyPath: headName
