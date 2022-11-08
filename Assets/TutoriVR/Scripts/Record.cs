@@ -26,7 +26,7 @@ public class Record : MonoBehaviour, IRunnable
         transform.localEulerAngles = appInfo.GetRecordButtonEulerAngles();
         SetChildrenActive(false);
         currentstate = false;
-         gameObject.GetComponent<Renderer>().material = recordButton;   
+        gameObject.GetComponent<Renderer>().material = recordButton;   
     }
 
     void Update()
@@ -34,6 +34,8 @@ public class Record : MonoBehaviour, IRunnable
         if (transform.parent == null)
         {
             transform.parent = appInfo.GetLeftController();
+            transform.localPosition = appInfo.GetRecordButtonPosition();
+            transform.localEulerAngles = appInfo.GetRecordButtonEulerAngles();
         }
         Debug.LogError(transform.parent);
     }

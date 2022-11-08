@@ -27,7 +27,6 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
     // public SteamVR_Action_Boolean uAction;
     [SerializeField] private Vector3 recButtonPos;
     [SerializeField] private Vector3 recButtonRot;
-
     [SerializeField] private TiltBrush.VrSdk vrSdk;
     // Start is called before the first frame update
     void Start()
