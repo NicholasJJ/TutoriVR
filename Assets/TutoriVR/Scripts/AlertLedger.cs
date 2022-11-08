@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Adding alerts with time and color into the time progress bar, and convert to JSON
+
+//Initialize the time and color for that  alert
 [Serializable]
 public class Alert
 {
@@ -15,6 +18,7 @@ public class Alert
     }
 }
 
+//Initializes a list containing all alerts for that video and stores the total time of the video
 [Serializable]
 public class ListLedger
 {
@@ -26,6 +30,8 @@ public class ListLedger
     }
 }
 
+/* AlertLedger class with options for recording alert times, 
+starting the video recording again, and converting the video to JSON upon completion */
 [CreateAssetMenu]
 public class AlertLedger : ScriptableObject
 {
@@ -39,6 +45,7 @@ public class AlertLedger : ScriptableObject
         recordingStartTime = Time.time;
     }
 
+    //Creates a new Alert at the current time with a specified color if the recording is currently happening
     public void RecordNewAlert(ColoredAlert color)
     {
         if (Event.isRecording())
@@ -47,6 +54,7 @@ public class AlertLedger : ScriptableObject
         }
     }
 
+    //returns the alerts and total time of the video as a JSON
     public string toJSON()
     {
         Debug.Log("recorded alerts count is " + recordedAlerts.alertList.Count);

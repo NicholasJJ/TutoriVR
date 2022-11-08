@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
+//Keeps track of all info regarding controllers and scene center
 [Serializable]
 public class ButtonInstance
 {
@@ -65,6 +67,7 @@ public class ButtonInstance
         return this;
     }
 
+    //Gets the current position and rotation for the controllers
     private (Vector3, Quaternion) getRelativePosRot(Transform t, Transform root, GameObject tracker)
     {
         //return (Vector3.zero, Quaternion.identity);

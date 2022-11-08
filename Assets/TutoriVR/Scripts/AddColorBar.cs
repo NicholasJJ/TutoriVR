@@ -5,15 +5,21 @@ using System.Collections;
 using System;
 
 
+//Creates bar showing how far along the user is in the tutorial video
+//Red indicates the current %, and the rest of the video remaining is gray
+
 // [RequireComponent(typeof(Camera))]
 public class AddColorBar : MonoBehaviour
 {
     // public Transform startPoint;
     // public Transform endPoint;
     // private float progressBarWidth;
+
+    //Creating variables to find how far along the user is in the video
     private float point;
     private float totTime;
     private float time;
+    
     void Start()
     {
     //   progressBarWidth = Vector3.Distance(startPoint.position, endPoint.position);
@@ -53,16 +59,19 @@ public Texture2D CopyTexture2D(Texture2D copiedTexture, float x_p, Color cl)
             int x = 0;
             while (x < texture.width )
             {
-                               //INSERT YOUR LOGIC HERE
+                //Make the pixel red if that part of video is watched
                 if(x > change -3 && x < change +3)
+                
                 {
-                                       //This line of code and if statement, turn Green pixels into Red pixels.
+                    //This line of code and if statement, turn Green pixels into Red pixels.
                     texture.SetPixel(x, y, cl);
                 }
                 // else if(x ==100)
                 // {
                 //     texture.SetPixel(x,y,Color.blue);
                 // }
+
+                //Otherwise, make the pixel Grey
                 else{
                     texture.SetPixel(x,y,Color.grey);
                 }
