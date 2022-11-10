@@ -10,6 +10,10 @@ public enum ButtonStatus
     None
 }
 
+/// <summary>
+/// Deals with the interaction of the controller ray with the world's gameobjects. Can
+/// run and change the color of gameobjects.
+/// </summary>
 public class TutoriRaycastManager : MonoBehaviour
 {
     [SerializeField] IAppInfo appInfo;
@@ -29,7 +33,11 @@ public class TutoriRaycastManager : MonoBehaviour
         lController = GameObject.Find("Controller (wand)").transform;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Updates class variables to contain reference the transform of the controllers and calls checkRay.
+    /// Also updates the color of objects that were selected and their colors stored in regColor. Removes
+    /// objects from regColor that are not selected.
+    /// </summary>
     void Update()
     {
         if (rController == null) rController = GameObject.Find("Controller (brush)").transform;
@@ -58,6 +66,16 @@ public class TutoriRaycastManager : MonoBehaviour
             regColor.Remove(o);
         }
     }
+
+    /// <summary>
+    /// Finds object that is being hit by controller ray. If the object can be run, the object's new color is
+    /// made slightly dimmer (even more so if controller is selecting that object) and saved in regColor. 
+    /// Calls the object's run function if button status is held/up.
+    /// </summary>
+    /// <param name="controller"></param>
+    /// <param name="status"></param>
+    /// <param name="line"></param>
+    /// <returns>Gameobject that is being hit by the ray (can be null)</returns>
     GameObject checkRay(Transform controller, ButtonStatus status, LineRenderer line)
     {
         RaycastHit hit;
