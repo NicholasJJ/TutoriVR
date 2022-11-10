@@ -32,23 +32,29 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
     void Start()
     {
         // TiltBrush.SketchControlsScript.m_Instance.
-        leftController = GameObject.Find("Controller (wand)").transform;
-        rightController = GameObject.Find("Controller (brush)").transform;
+        // leftController = GameObject.Find("Controller (wand)").transform;
+        // rightController = GameObject.Find("Controller (brush)").transform;
         sceneTransform = GameObject.Find("SceneParent").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("lft controller: " + leftController);
         if (rightController == null &&
-            GameObject.Find("UnityXRUninitializedControls(Clone)") == null)
+            !GameObject.Find("Controller (brush)").transform.parent.Equals(null) &&
+            !GameObject.Find("Controller (brush)").transform.parent.name.Equals("UnityXRUninitializedControls(Clone)"))
         {
             rightController = GameObject.Find("Controller (brush)").transform;
+            Debug.Log("parent is: " + rightController.parent.name);
+
         }
         if (leftController == null &&
-            GameObject.Find("UnityXRUninitializedControls(Clone)") == null)
+            !GameObject.Find("Controller (brush)").transform.parent.Equals(null) &&
+            !GameObject.Find("Controller (brush)").transform.parent.name.Equals("UnityXRUninitializedControls(Clone)"))
         {
             leftController = GameObject.Find("Controller (wand)").transform;
+            Debug.Log("parent is: "  + leftController.parent.name);
         }
         if (head == null && GameObject.Find("(RenderWrapper Camera)") != null) head = GameObject.Find("(RenderWrapper Camera)").transform;
         Debug.DrawRay(rightController.position, rightController.forward, Color.red);
