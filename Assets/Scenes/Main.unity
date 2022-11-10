@@ -32797,6 +32797,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2094189263}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2095131332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114264214864148510, guid: e140936c619624db4b6740ea5d94c1ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1441595438097208768}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441595438097208786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d85b786592d3942acdfd2b91bf5567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2095572865 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4492044765921076688, guid: 382dabebd59956d499aefb54b02f804d,
@@ -33690,7 +33702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf919ae2b02664bae8853c93e4a07148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lengthLimit: -1
+  lengthLimit: 30
 --- !u!102 &1441595437110688099
 TextMesh:
   serializedVersion: 3
@@ -33853,17 +33865,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa65868c293edd4ab536e8d11aab682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showButton: {fileID: 0}
-  closeButton: {fileID: 0}
-  playFromFile: 0
-  readTutori: 0
-  buttonRecreation: {fileID: 0}
-  VideoPlayer: {fileID: 0}
-  VideoPlayer_stereo: {fileID: 0}
-  microphone_audio: {fileID: 0}
-  awareness_widget: {fileID: 0}
-  perspective_widget: {fileID: 0}
-  repCam: {fileID: 0}
+  showButton: {fileID: 2100000, guid: 4552f4e7fece8cd43bbd33f4927055a8, type: 2}
+  closeButton: {fileID: 2100000, guid: cbcfc8a208697b5498b6d43c8963de86, type: 2}
+  playFromFile: 1
+  readTutori: 1
+  buttonRecreation: {fileID: 957070707806924748, guid: 69464d9ba28b7304d979e15926ac2084,
+    type: 3}
+  VideoPlayer: {fileID: 1441595438097208786}
+  VideoPlayer_stereo: {fileID: 1441595438311263954}
+  microphone_audio: {fileID: 1441595438249504894}
+  awareness_widget: {fileID: 1441595439081704075}
+  perspective_widget: {fileID: 1441595438256321073}
+  repCam: {fileID: 1441595439142439380}
 --- !u!4 &1441595437152660638
 Transform:
   m_ObjectHideFlags: 0
@@ -33998,9 +34011,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayerCtrl: {fileID: 0}
-  startPoint: {fileID: 0}
-  endPoint: {fileID: 0}
-  target: {fileID: 0}
+  startPoint: {fileID: 1441595437526167618}
+  endPoint: {fileID: 1441595437222745812}
+  target: {fileID: 1441595438185811666}
 --- !u!65 &1441595437207164832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34206,7 +34219,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 15
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1441595437236379889
 Canvas:
   m_ObjectHideFlags: 0
@@ -34920,9 +34933,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayerCtrl: {fileID: 0}
-  startPoint: {fileID: 0}
-  endPoint: {fileID: 0}
-  cam: {fileID: 0}
+  startPoint: {fileID: 1441595438516536700}
+  endPoint: {fileID: 1441595437273016999}
+  cam: {fileID: 1441595439142439385}
 --- !u!1 &1441595437568418013
 GameObject:
   m_ObjectHideFlags: 0
@@ -35099,7 +35112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e225e3462d6182044a9ed63b282f8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recorder: {fileID: 0}
+  recorder: {fileID: 11400000, guid: f011d41a9f0859449b9378e8ef9c3533, type: 2}
   alertColor: 0
 --- !u!23 &1441595437735859217
 MeshRenderer:
@@ -35266,8 +35279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e225e3462d6182044a9ed63b282f8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recorder: {fileID: 0}
-  alertColor: 0
+  recorder: {fileID: 11400000, guid: f011d41a9f0859449b9378e8ef9c3533, type: 2}
+  alertColor: 2
 --- !u!65 &1441595437754242027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35474,8 +35487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec314817bd067b4f99bbd21d0f8342e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 0}
-  ledger: {fileID: 0}
+  Event: {fileID: 11400000, guid: cc42fb3e6e37ecb4bb840c2214dba503, type: 2}
+  ledger: {fileID: 11400000, guid: f011d41a9f0859449b9378e8ef9c3533, type: 2}
 --- !u!114 &1441595437890711461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35518,8 +35531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d983b75bb0e794db37f0b46e8a115f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 0}
-  tracker: {fileID: 0}
+  Event: {fileID: 11400000, guid: cc42fb3e6e37ecb4bb840c2214dba503, type: 2}
+  tracker: {fileID: 5533215289746426252, guid: e6292e952c6632e4d86a85aed2346e13, type: 3}
 --- !u!1 &1441595437890711465
 GameObject:
   m_ObjectHideFlags: 0
@@ -36158,8 +36171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e225e3462d6182044a9ed63b282f8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recorder: {fileID: 0}
-  alertColor: 0
+  recorder: {fileID: 11400000, guid: f011d41a9f0859449b9378e8ef9c3533, type: 2}
+  alertColor: 1
 --- !u!1 &1441595438044624785
 GameObject:
   m_ObjectHideFlags: 0
@@ -37344,7 +37357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78add0c2b65c8da4ba267c955b6ab8a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awareness_widget: {fileID: 0}
+  awareness_widget: {fileID: 1441595439081704075}
 --- !u!23 &1441595438245181856
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37610,9 +37623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9967bf383e156c74b81952e14a2378e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayerCtrl: {fileID: 0}
-  startPoint: {fileID: 0}
-  endPoint: {fileID: 0}
+  videoPlayerCtrl: {fileID: 2095131332}
+  startPoint: {fileID: 1441595438770095143}
+  endPoint: {fileID: 1441595438511107252}
 --- !u!114 &1441595438281461115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38802,7 +38815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51ea5290ca7c747419d80d00c7e32f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perspective_widget: {fileID: 0}
+  perspective_widget: {fileID: 1441595438256321073}
 --- !u!114 &1441595438927306379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38938,8 +38951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d13f41157d5f8c4883f3383f219ff98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasPos: {x: 0, y: 0, z: 0}
-  canvasRot: {x: 0, y: 0, z: 0}
+  canvasPos: {x: 0, y: 0.15, z: 0.75}
+  canvasRot: {x: 25, y: 0, z: 0}
 --- !u!224 &1441595439081704072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38983,7 +38996,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 15
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!1 &1441595439081704075
 GameObject:
   m_ObjectHideFlags: 0
@@ -39069,7 +39082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31adc35de5598234f8e6af73dd6c533f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 1441595438185811666}
 --- !u!4 &1441595439142439382
 Transform:
   m_ObjectHideFlags: 0
