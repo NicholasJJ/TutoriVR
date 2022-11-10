@@ -4,7 +4,9 @@ using UnityEngine;
 using System;
 
 
-//Keeps track of all info regarding controllers and scene center
+/// <summary>
+/// Keeps track of all info regarding controllers and scene center
+/// </summary>
 [Serializable]
 public class ButtonInstance
 {
@@ -29,11 +31,18 @@ public class ButtonInstance
 
     public GameObject tracker;
 
-    // gets data of current frame
+    /// <summary>
+    /// Gets the scene center data for the current frame
+    /// </summary>
+    /// <param name="appInfo"></param>
+    /// <param name="timeStamp"></param>
+    /// <param name="tracker"></param>
+    /// <returns></returns>
     public ButtonInstance createInstance(IAppInfo appInfo, float timeStamp, GameObject tracker)
     {
         time = timeStamp;
         instance = appInfo;
+
         //brushtype = null;
         //colorcon = GameObject.Find("App").GetComponent<TiltBrush.BrushColorController>();
         //color = colorcon.CurrentColor;
@@ -48,6 +57,7 @@ public class ButtonInstance
         //Debug.Log(tool);
         //brushcolor = TiltBrush.ColorController.trackColor;
         //Debug.Log(brushcolor);
+
         additionalInfo = instance.GetSerializedAdditionalInfo();
         color = instance.GetColor();
         Transform lc = instance.GetLeftController();
@@ -67,7 +77,13 @@ public class ButtonInstance
         return this;
     }
 
-    //Gets the current position and rotation for the controllers
+    /// <summary>
+    /// Gets the current position and rotation for the controllers
+    /// </summary>
+    /// <param name="t"></param>
+    /// <param name="root"></param>
+    /// <param name="tracker"></param>
+    /// <returns>Returns the position/rotation of the controllers</returns>
     private (Vector3, Quaternion) getRelativePosRot(Transform t, Transform root, GameObject tracker)
     {
         //return (Vector3.zero, Quaternion.identity);

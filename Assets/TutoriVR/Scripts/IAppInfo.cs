@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Includes functions for getting status of the headset, triggers, and the controllers.
+/// Also has functions for position and rotation of the record button, and the color of the drawing tools' lines.
+/// </summary>
 public interface IAppInfo
 {
     Transform GetLeftController();

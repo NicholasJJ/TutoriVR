@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Gets a specific audio file, and has functions for playing it
+/// </summary>
 public class MicAudioController : MonoBehaviour
 {
     public const string audioName = "mic.wav";
@@ -10,6 +13,9 @@ public class MicAudioController : MonoBehaviour
     public AudioClip audioClip;
     public string soundPath;
 
+    /// <summary>
+    /// Creates the audio source that can later have an audio clip attached to it
+    /// </summary>
     private void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
@@ -22,6 +28,10 @@ public class MicAudioController : MonoBehaviour
         //Debug.Log(audioSource.time);
     }
 
+    /// <summary>
+    /// Gets the audio from the specific file, and plays it
+    /// </summary>
+    /// <returns>Yields the file</returns>
     public IEnumerator LoadAudio()
     {
         WWW request = GetAudioFromFile("file://" + soundPath, audioName);
@@ -33,6 +43,12 @@ public class MicAudioController : MonoBehaviour
         PlayAudioFile();
     }
 
+    /// <summary>
+    /// Reformats the filename with the other part of the path, and makes the request to get the file
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="filename"></param>
+    /// <returns>The file from the specified path</returns>
     private WWW GetAudioFromFile(string path, string filename)
     {
         string audioToLoad = string.Format(path + "{0}", filename);
@@ -41,6 +57,9 @@ public class MicAudioController : MonoBehaviour
         return request;
     }
 
+    /// <summary>
+    /// Plays the whole audio clip
+    /// </summary>
     public void PlayAudioFile()
     {
         Debug.Log("in play audio");
@@ -49,6 +68,10 @@ public class MicAudioController : MonoBehaviour
         audioSource.Play();
     }
 
+    /// <summary>
+    /// Pauses the video and sets the time for that audio source to start at the paused time.
+    /// </summary>
+    /// <param name="t"></param>
     public void SetTime(float t)
     {
         //Debug.Log(t);

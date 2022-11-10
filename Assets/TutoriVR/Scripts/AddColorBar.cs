@@ -5,8 +5,10 @@ using System.Collections;
 using System;
 
 
-//Creates bar showing how far along the user is in the tutorial video
-//Red indicates the current %, and the rest of the video remaining is gray
+/// <summary>
+/// Creates bar showing how far along the user is in the tutorial video.
+/// Red indicates the current %, and the rest of the video remaining is gray.
+/// </summary>
 
 // [RequireComponent(typeof(Camera))]
 public class AddColorBar : MonoBehaviour
@@ -15,40 +17,49 @@ public class AddColorBar : MonoBehaviour
     // public Transform endPoint;
     // private float progressBarWidth;
 
-    //Creating variables to find how far along the user is in the video
+    /*
+    Creating variables to find how far along the user is in the video
+    */
     private float point;
     private float totTime;
     private float time;
     
+    /// <summary>
+    /// Set how far along the user is in the video
+    /// </summary>
     void Start()
     {
     //   progressBarWidth = Vector3.Distance(startPoint.position, endPoint.position);
-      time = 5f;
-      totTime = 10f;
-      point = time/totTime;
-//  Debug.Log(gameObject.GetComponent<SpriteRenderer> ().sprite.texture.width);
-      Texture2D characterTexture2D = CopyTexture2D(gameObject.GetComponent<SpriteRenderer> ().sprite.texture,point,Color.red);
- 
-//Get your SpriteRenderer, get the name of the old sprite,  create a new sprite, name the sprite the old name, and then update the material. If you have multiple sprites, you will want to do this in a loop- which I will post later in another post.
+        time = 5f;
+        totTime = 10f;
+        point = time/totTime;
+        //  Debug.Log(gameObject.GetComponent<SpriteRenderer> ().sprite.texture.width);
+        Texture2D characterTexture2D = CopyTexture2D(gameObject.GetComponent<SpriteRenderer> ().sprite.texture,point,Color.red);
+        /*
+        Get your SpriteRenderer, get the name of the old sprite,  create a new sprite, name the sprite the old name, and then update the material. If you have multiple sprites, you will want to do this in a loop- which I will post later in another post.
+        */
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         string tempName = "color Bar";
         sr.sprite = Sprite.Create (characterTexture2D, sr.sprite.rect, new Vector2(0.5f,0.5f));
         sr.sprite.name = tempName;
- 
         sr.material.mainTexture = characterTexture2D;
         // sr.material.shader = Shader.Find ("Sprites/Transparent Unlit");
 
     }
-
-
-//CopiedTexture is the original Texture  which you want to copy.
+    ///
+    /// <summary>
+    /// Makes pixels of the progress bar red or grey depending on whether that portion of the video has already been watched.
+    /// </summary>
+    /// <returns>A Texture2D progress bar with the correct pixel colors</returns>
 public Texture2D CopyTexture2D(Texture2D copiedTexture, float x_p, Color cl)
     {
-               //Create a new Texture2D, which will be the copy.
+        //Create a new Texture2D, which will be the copy.
+
         Texture2D texture = new Texture2D(copiedTexture.width, copiedTexture.height);
-               //Choose your filtermode and wrapmode here.
+        //Choose your filtermode and wrapmode here.
         texture.filterMode = FilterMode.Point;
         texture.wrapMode = TextureWrapMode.Clamp;
+
         // int change = int x_p;
         // int change= x_p*texture.width;
         float change = x_p * texture.width;
@@ -59,7 +70,7 @@ public Texture2D CopyTexture2D(Texture2D copiedTexture, float x_p, Color cl)
             int x = 0;
             while (x < texture.width )
             {
-                //Make the pixel red if that part of video is watched
+                /* Make the pixel red if that part of video is watched */
                 if(x > change -3 && x < change +3)
                 
                 {
@@ -71,7 +82,7 @@ public Texture2D CopyTexture2D(Texture2D copiedTexture, float x_p, Color cl)
                 //     texture.SetPixel(x,y,Color.blue);
                 // }
 
-                //Otherwise, make the pixel Grey
+                /* Otherwise, make the pixel Grey */
                 else{
                     texture.SetPixel(x,y,Color.grey);
                 }
@@ -84,13 +95,13 @@ public Texture2D CopyTexture2D(Texture2D copiedTexture, float x_p, Color cl)
             }
             ++y;
         }
-                //Name the texture, if you want.
+        // Name the texture, if you want.
         // texture.name = (Species+Gender+"_SpriteSheet");
  
-               //This finalizes it. If you want to edit it still, do it before you finish with .Apply(). Do NOT expect to edit the image after you have applied. It did NOT work for me to edit it after this function.
+        /* This finalizes it. If you want to edit it still, do it before you finish with .Apply(). Do NOT expect to edit the image after you have applied. It did NOT work for me to edit it after this function. */
         texture.Apply();
  
-//Return the variable, so you have it to assign to a permanent variable and so you can use it.
+        /* Return the variable, so you have it to assign to a permanent variable and so you can use it. */
         return texture;
     }
  
