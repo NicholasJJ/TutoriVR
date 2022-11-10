@@ -25,15 +25,15 @@ public class TutoriRaycastManager : MonoBehaviour
     void Start()
     {
         appInfo = GetComponent<IAppInfo>();
-        rController = GameObject.Find("Controller (brush)").transform;
-        lController = GameObject.Find("Controller (wand)").transform;
+        //rController = appInfo.GetRightController().transform;
+        //lController = appInfo.GetLeftController().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rController == null) rController = GameObject.Find("Controller (brush)").transform;
-        if (lController == null) lController = GameObject.Find("Controller (wand)").transform;
+        if (rController == null) rController = appInfo.GetRightController().transform;
+        if (lController == null) lController = appInfo.GetLeftController().transform;
         rStat = appInfo.GetUnusedButtonStatus();
         //lStat = appInfo.GetLeftTriggerStatus();
         GameObject o1 = checkRay(rController, rStat, rLine);
