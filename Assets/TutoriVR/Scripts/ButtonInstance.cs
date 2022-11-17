@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
-//Keeps track of all info regarding controllers and scene center
+/// <summary>
+/// Keeps track of all info regarding controllers and scene center
+/// </summary>
 [Serializable]
 public class ButtonInstance
 {

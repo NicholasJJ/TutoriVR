@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Recording Event stores RecordingEventListeners that can all be raised. Able to add and
+/// remove listeners from the list.
+/// </summary>
 [CreateAssetMenu]
 public class RecordingEvent : ScriptableObject
 {
@@ -13,6 +17,9 @@ public class RecordingEvent : ScriptableObject
         recording = false;
     }
 
+    /// <summary>
+    /// Calls onRecordRaised for all of the listeners added to the list "listeners".
+    /// </summary>
     public void Raise()
     {
         recording = !recording;
