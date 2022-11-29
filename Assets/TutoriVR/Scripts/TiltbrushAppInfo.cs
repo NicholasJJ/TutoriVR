@@ -28,6 +28,8 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
     [SerializeField] private Vector3 recButtonPos;
     [SerializeField] private Vector3 recButtonRot;
     [SerializeField] private TiltBrush.VrSdk vrSdk;
+
+    [SerializeField] private Vector3 raycastForwardRotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -133,4 +135,6 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
     {
         return GameObject.Find("App").GetComponent<TiltBrush.BrushColorController>().CurrentColor;
     }
+
+    public Vector3 GetRaycastForwardRotation() => raycastForwardRotation;
 }

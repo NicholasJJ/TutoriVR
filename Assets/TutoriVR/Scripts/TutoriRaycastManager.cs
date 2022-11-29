@@ -79,8 +79,9 @@ public class TutoriRaycastManager : MonoBehaviour
     GameObject checkRay(Transform controller, ButtonStatus status, LineRenderer line)
     {
         RaycastHit hit;
-        Debug.DrawRay(controller.position, controller.forward, Color.red);
-        if (Physics.Raycast(controller.position, controller.forward, out hit))
+        Vector3 dir = Quaternion.Euler(appInfo.GetRaycastForwardRotation()) * controller.forward;
+        Debug.DrawRay(controller.position, dir, Color.red);
+        if (Physics.Raycast(controller.position, dir, out hit))
         {
             if (hit.collider.gameObject.GetComponent<IRunnable>() != null || hit.collider.gameObject.GetComponent<IRunnableHold>() != null)
             {
