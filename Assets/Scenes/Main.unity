@@ -34781,8 +34781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358f966ab72cc694da8ce8437159ece6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HMD: {fileID: 0}
-  xOffset: 0
+  HMD: {fileID: 465982406}
+  xOffset: 1
 --- !u!114 &1441595437568418004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35569,8 +35569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358f966ab72cc694da8ce8437159ece6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HMD: {fileID: 0}
-  xOffset: 0
+  HMD: {fileID: 465982406}
+  xOffset: 1
 --- !u!65 &1441595437961725366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39494,6 +39494,16 @@ PrefabInstance:
         type: 3}
       propertyPath: uAction.actionPath
       value: /actions/TiltBrush/in/RI_SecondaryButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100108756367445098, guid: 4cefd3d137eabaa44bd583fce191f27f,
+        type: 3}
+      propertyPath: raycastForwardRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100108756367445098, guid: 4cefd3d137eabaa44bd583fce191f27f,
+        type: 3}
+      propertyPath: raycastForwardRotation.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100108756367445098, guid: 4cefd3d137eabaa44bd583fce191f27f,
         type: 3}
