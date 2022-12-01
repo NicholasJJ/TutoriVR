@@ -6,12 +6,11 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using Evereal.VRVideoPlayer;
 
-
-// [RequireComponent(typeof(Camera))]
 /// <summary>
 /// Is able to to load the latest video in the /recording directory which includes audio and button recreation info
 /// when run.
 /// </summary>
+// [RequireComponent(typeof(Camera))]
 public class VideoPlayerButton : MonoBehaviour, IRunnable
 {
     [SerializeField] Material showButton;
@@ -31,8 +30,8 @@ public class VideoPlayerButton : MonoBehaviour, IRunnable
     public ReplicatorCam repCam;
     //public GameObject record_begin_button;
 
-    // [SerializeField] VideoCapture VC;
     // Start is called before the first frame update
+    // [SerializeField] VideoCapture VC;
     void Start()
     {
         SetChildrenActive(false);
@@ -45,8 +44,6 @@ public class VideoPlayerButton : MonoBehaviour, IRunnable
     /// is == True, the video is played. Otherwise deactivates awareness and perspective widget.
     /// If there is inputData, button recreation is activated and inputData is fed to it and played.
     /// </summary>
-    /// <param name="setting"></param>
-    /// <param name="inputsData"></param>
     private void SetChildrenActive(bool setting, buttonLedger inputsData = null)
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -89,7 +86,6 @@ public class VideoPlayerButton : MonoBehaviour, IRunnable
     /// changes the currentstate. Only loads info if playFromFile is set to true. Changes material
     /// of object button depending on current state.
     /// </summary>
-    /// <param name="currentpoint"></param>
     public void Run(Vector3 currentpoint)
     {
         if (!playFromFile)

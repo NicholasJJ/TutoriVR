@@ -5,6 +5,10 @@ using UnityEngine;
 using System;
 using UnityEngine.XR;
 
+/// <summary>
+/// AdditionalInfo will store information regarding the brush tool/type/color.
+/// Needs to be serializable as it will be converted to JSON.
+/// </summary>
 [Serializable]
 public struct additionalInfo
 {
@@ -13,13 +17,18 @@ public struct additionalInfo
     public Color brushcolor;
 }
 
+/// <summary>
+/// TiltbrushAppInfo stores the pointers to the controllers and the scene and updates
+/// them if they are somehow lost. Also updates the status of the controllers based on
+/// input detected.
+/// </summary>
 public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
 {
     private Transform leftController;
     private Transform rightController;
     private Transform sceneTransform;
     [SerializeField] private Transform head;
-    private RaycastHit rightHit;
+    // private RaycastHit rightHit; 
     private ButtonStatus rightTriggerStatus;
     private ButtonStatus leftTriggerStatus;
     private ButtonStatus unusedButtonStatus;
@@ -27,10 +36,13 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
     // public SteamVR_Action_Boolean uAction;
     [SerializeField] private Vector3 recButtonPos;
     [SerializeField] private Vector3 recButtonRot;
-    [SerializeField] private TiltBrush.VrSdk vrSdk;
+    // [SerializeField] private TiltBrush.VrSdk vrSdk; 
 
-    [SerializeField] private Vector3 raycastForwardRotation;
-    // Start is called before the first frame update
+    [SerializeField] private Vector3 raycastForwardRotation; 
+
+    /// <summary>
+    /// Sets sceneTransform to be equal to the transform of the gameobject "SceneParent"
+    /// </summary>
     void Start()
     {
         // TiltBrush.SketchControlsScript.m_Instance.
@@ -39,7 +51,11 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
         sceneTransform = GameObject.Find("SceneParent").transform;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Every frame, updates the pointers to controllers if set to null and the parent of their transform is not 
+    /// UnityXRUnitializedControls(Clone) AND updates the status of the triggers and buttons based on the input
+    /// from the controllers.
+    /// </summary>
     void Update()
     {
         Debug.Log("lft controller: " + leftController);
@@ -73,6 +89,10 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
         //Debug.Log(unusedButtonStatus);
     }
 
+    /// <summary>
+    /// Finds controller with the specified name. Returns null if the name does not exist 
+    /// in TiltBrush Input manager controllers.
+    /// </summary>
     private TiltBrush.ControllerInfo getControllerWithName(TiltBrush.InputManager.ControllerName name) {
         foreach (var c in TiltBrush.InputManager.Controllers) {
             if (c.Behavior.ControllerName.Equals(name)) return c;
@@ -80,6 +100,11 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
         return null;
     }
 
+    /// <summary>
+    /// Determines what the new status of the controller is depending on its current state
+    /// and whether or not the trigger/button was just pressed.
+    /// </summary>
+    /// <returns>New status of the controller</returns>
     private ButtonStatus UpdatedButtonStatus(ButtonStatus current, bool isPressed)
     {
         if (isPressed)
@@ -117,6 +142,11 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
 
     public ButtonStatus GetUnusedButtonStatus() => unusedButtonStatus;
 
+    /// <summary>
+    /// Creates instance of the additional info struct and fills it with information regarding
+    /// the brush tool, its color, and its type. Converts instance into JSON.
+    /// </summary>
+    /// <returns>JSON of additional info regarding the brush</returns>
     public string GetSerializedAdditionalInfo()
     {
         additionalInfo a = new additionalInfo();
@@ -131,6 +161,7 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
         return JsonUtility.ToJson(a);
     }
 
+    /// <returns>Current color of the BrushController</returns>
     public Color GetColor()
     {
         return GameObject.Find("App").GetComponent<TiltBrush.BrushColorController>().CurrentColor;

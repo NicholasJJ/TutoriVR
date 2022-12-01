@@ -95,6 +95,9 @@ public class trackController : MonoBehaviour
         playbackStartTime = Time.time;
     }
 
+    /// <summary>
+    /// Sets playing status to false.
+    /// </summary>
     public void Stop()
     {
         playing = false;
@@ -104,7 +107,6 @@ public class trackController : MonoBehaviour
     /// Destroys current trail, changes index to last button action before the selected
     /// time.
     /// </summary>
-    /// <param name="time"></param>
     public void SkipToTime(float time)
     {
         if (trail != null)
@@ -138,6 +140,7 @@ public class trackController : MonoBehaviour
         index = minIndex;
     }
 
+    /// <returns>Gradient object created using the inputted color</returns>
     private Gradient GradientFromColor(Color c)
     {
         var gradient = new Gradient();

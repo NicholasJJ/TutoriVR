@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// When initialized, ButtonStatus will have one of the following values. Used
+/// to keep track of controller status.
+/// </summary>
 public enum ButtonStatus
 {
     Down,
@@ -25,6 +29,7 @@ public class TutoriRaycastManager : MonoBehaviour
     private ButtonStatus lStat;
 
     private Dictionary<GameObject, Color> regColor = new Dictionary<GameObject, Color>();
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -72,9 +77,6 @@ public class TutoriRaycastManager : MonoBehaviour
     /// made slightly dimmer (even more so if controller is selecting that object) and saved in regColor. 
     /// Calls the object's run function if button status is held/up.
     /// </summary>
-    /// <param name="controller"></param>
-    /// <param name="status"></param>
-    /// <param name="line"></param>
     /// <returns>Gameobject that is being hit by the ray (can be null)</returns>
     GameObject checkRay(Transform controller, ButtonStatus status, LineRenderer line)
     {
