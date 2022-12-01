@@ -34781,8 +34781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358f966ab72cc694da8ce8437159ece6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HMD: {fileID: 0}
-  xOffset: 0
+  HMD: {fileID: 465982406}
+  xOffset: 1
 --- !u!114 &1441595437568418004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35569,8 +35569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358f966ab72cc694da8ce8437159ece6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HMD: {fileID: 0}
-  xOffset: 0
+  HMD: {fileID: 465982406}
+  xOffset: 1
 --- !u!65 &1441595437961725366
 BoxCollider:
   m_ObjectHideFlags: 0
