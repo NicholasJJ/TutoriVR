@@ -79,7 +79,7 @@ public class TutoriRaycastManager : MonoBehaviour
     GameObject checkRay(Transform controller, ButtonStatus status, LineRenderer line)
     {
         RaycastHit hit;
-        Vector3 dir = Quaternion.Euler(appInfo.GetRaycastForwardRotation()) * controller.forward;
+        Vector3 dir = controller.rotation * appInfo.GetRaycastForwardRotation();
         Debug.DrawRay(controller.position, dir, Color.red);
         if (Physics.Raycast(controller.position, dir, out hit))
         {
