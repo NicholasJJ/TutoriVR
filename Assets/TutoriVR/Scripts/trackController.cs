@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Mimics controller actions from buttonList by leaving temporary trails from drawing. 
+/// </summary>
 public class trackController : MonoBehaviour
 {
     public buttonLedger dataLedger;
@@ -19,13 +22,18 @@ public class trackController : MonoBehaviour
 
     [SerializeField] Material buttonDownMat;
     [SerializeField] Material buttonUpMat;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// If status = playing, finds latest button press and draws trail showing the path of the controller during stroke.
+    /// If brush is not down, trail is continues from previous position of the rightControllerMimic, else destroys the trail
+    /// after a delay. 
+    /// </summary>
     void Update()
     {
         if (playing)
@@ -75,6 +83,9 @@ public class trackController : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Continues or restarts playback based on button index. Updates trackController status.
+    /// </summary>
     public void Play()
     {
         buttonList = dataLedger.ledger;
@@ -89,6 +100,11 @@ public class trackController : MonoBehaviour
         playing = false;
     }
 
+    /// <summary>
+    /// Destroys current trail, changes index to last button action before the selected
+    /// time.
+    /// </summary>
+    /// <param name="time"></param>
     public void SkipToTime(float time)
     {
         if (trail != null)

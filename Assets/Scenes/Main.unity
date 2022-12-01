@@ -35366,9 +35366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06aaae1962329a54385d74a11e55aed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recordButton: {fileID: 0}
-  stopButton: {fileID: 0}
-  Event: {fileID: 0}
+  recordButton: {fileID: 2100000, guid: 059e1111f7030fe4ca37b01081d4cd97, type: 2}
+  stopButton: {fileID: 2100000, guid: 1ccf0e659957ee04b9e2351c50205556, type: 2}
+  Event: {fileID: 11400000, guid: cc42fb3e6e37ecb4bb840c2214dba503, type: 2}
 --- !u!20 &1441595437890711455
 Camera:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public interface IAppInfo
 
     Transform GetRightController();
 
+    Vector3 GetRaycastForwardRotation();
+
     Transform GetSceneRootTransform();
 
     Transform GetHead();
