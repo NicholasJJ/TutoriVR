@@ -23,10 +23,6 @@ public class RotateBar : BarBase, IRunnable
         
     }
 
-
-
-
-
     public void Run(Vector3 currentPoint)
     {
         float currentWidth = Vector3.Distance(startPoint.position, currentPoint);
