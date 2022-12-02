@@ -25,13 +25,14 @@ public class RotateBar : BarBase, IRunnable
 
 
 
-
     /// <summary>
     /// For the perspective thumbnail widget, sets the field of view of the game
     /// based on the requested rotation around the handstroke and updates the
     /// progress bar for how much rotation has occurred accordingly
     /// </summary>
     /// <param name="currentPoint"></param>
+    
+
     public void Run(Vector3 currentPoint)
     {
         float currentWidth = Vector3.Distance(startPoint.position, currentPoint);
