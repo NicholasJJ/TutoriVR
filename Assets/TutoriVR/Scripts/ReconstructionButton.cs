@@ -4,6 +4,8 @@ using UnityEngine;
 
 /// <summary>
 /// Toggles the perspective widget active state
+/// Perspective widget is used to understand stroke structure and controller interactions
+/// The created stroke can be rotated 360 degrees around the stroke and zoomed in/out of
 /// </summary>
 public class ReconstructionButton : MonoBehaviour, IRunnable
 {

@@ -7,6 +7,10 @@ using System.Runtime.InteropServices;
 
 
 // [RequireComponent(typeof(Camera))]
+/// <summary>
+/// Creates a record button relative to the left controller
+/// Can activate/deactivate its children, including start/stop recording buttons
+/// </summary>
 public class Record : MonoBehaviour, IRunnable
 {
     [SerializeField] Material recordButton;
@@ -18,6 +22,10 @@ public class Record : MonoBehaviour, IRunnable
 
     // [SerializeField] VideoCapture VC;
     // Start is called before the first frame update
+    /// <summary>
+    /// Creates the record button with its children active
+    /// Set position and rotation based on that of the record button
+    /// </summary>
     void Start()
     {
         appInfo = GetComponentInParent<IAppInfo>();
@@ -29,6 +37,10 @@ public class Record : MonoBehaviour, IRunnable
         gameObject.GetComponent<Renderer>().material = recordButton;   
     }
 
+    /// <summary>
+    /// Set the record button's parent as the left controller 
+    /// Update position and rotation based on record button position/rotation
+    /// </summary>
     void Update()
     {
         if (transform.parent == null)
@@ -40,6 +52,10 @@ public class Record : MonoBehaviour, IRunnable
         Debug.LogError(transform.parent);
     }
     
+    /// <summary>
+    /// Makes all the children active/inactive
+    /// </summary>
+    /// <param name="setting">Setting for whether the children should be active or not</param>
     private void SetChildrenActive(bool setting)
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -48,6 +64,10 @@ public class Record : MonoBehaviour, IRunnable
         }
     }
 
+    /// <summary>
+    /// Display appropriate options for starting or stopping the recording based on the current settings
+    /// </summary>
+    /// <param name="currentpoint"></param>
     public void Run(Vector3 currentpoint)
     {
         SetChildrenActive(!currentstate);

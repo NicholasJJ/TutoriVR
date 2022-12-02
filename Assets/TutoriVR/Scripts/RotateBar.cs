@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Evereal.VRVideoPlayer;
 
+/// <summary>
+/// Rotates bar based on where ray selected on rotate bar
+/// </summary>
 public class RotateBar : BarBase, IRunnable
 {
     private IAppInfo appInfo;

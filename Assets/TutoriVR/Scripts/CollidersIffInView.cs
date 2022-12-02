@@ -2,21 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Enables the collider component if angle from head means object in view
+/// <summary>
+/// Enables the collider component if the object is in view based on the current point of view
+/// </summary>
 public class CollidersIffInView : MonoBehaviour
 {
     private IAppInfo appInfo;
     Transform h;
-    // Start is called before the first frame update
+    /// <summary>
+    /// Gets the information about the application before the first frame starts
+    /// </summary>
     void Start()
     {
         appInfo = GetComponentInParent<IAppInfo>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Find the collider and enable it if in view
+    /// </summary>
     void Update()
     {
-        //if the collider already exists enable it if in view
+        //if the collider already exists and it is in view, enable it
         if (h != null)
         {
             Vector3 headToSelf = transform.position - h.position;
@@ -33,7 +39,10 @@ public class CollidersIffInView : MonoBehaviour
         }
     }
 
-    //change whether it is enabled based on if the collider is in view
+    /// <summary>
+    /// Changes whether the object is enabled based on whether it is in view
+    /// </summary>
+    /// <param name="setting">Variable indicating whether the object should be enabled for collision or not</param>
     void SetCollidersEnabled(bool setting)
     {
         if (GetComponent<Collider>() != null) GetComponent<Collider>().enabled = setting;

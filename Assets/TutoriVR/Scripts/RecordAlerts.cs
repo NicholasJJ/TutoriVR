@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+/// <summary>
+/// 
+/// </summary>
 public class RecordAlerts : RecordingEventListener
 {
     [SerializeField] private AlertLedger ledger;
@@ -30,7 +33,7 @@ public class RecordAlerts : RecordingEventListener
         SetChildrenActive(false);
         ExportJson("alerts", alertJSON);
     }
-
+    
     private void SetChildrenActive(bool setting)
     {
         for (int i = 0; i < transform.childCount; i++)

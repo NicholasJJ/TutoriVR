@@ -6,7 +6,9 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using Evereal.VideoCapture;
 
-
+/// <summary>
+/// Performs the actual recording of the screen
+/// </summary>
 [RequireComponent(typeof(Camera))]
 public class RecordBegin : MonoBehaviour, IRunnable
 {
@@ -15,9 +17,12 @@ public class RecordBegin : MonoBehaviour, IRunnable
     [SerializeField] RecordingEvent Event;
     //public GameObject video_begin_button;
     private IAppInfo appInfo;
-
+    
     VideoCapture[] VC;
     // Start is called before the first frame update
+    /// <summary>
+    /// Captures each recording frame and stores it in an array
+    /// </summary>
     void Start()
     {
         // appInfo = GetComponentInParent<IAppInfo>();
@@ -32,10 +37,18 @@ public class RecordBegin : MonoBehaviour, IRunnable
         }
     }
 
+    /// <summary>
+    /// Check if the user is currently recording or not.
+    /// If they are not recording, store the contents of the recording in a folder.
+    /// Otherwise, capture the screen or camera.
+    /// Change the start/stop buttons displays accordingly.
+    /// </summary>
+    /// <param name="currentpoint"></param>
     public void Run(Vector3 currentpoint)
     {
         Debug.Log("Clicked");
         Event.Raise();
+        //if not currently recording, stop each of the cameras and save the recordings in a folder
         if (!Event.isRecording())
         {
             foreach (GameObject o in GameObject.FindGameObjectsWithTag("RecordCam"))
@@ -56,6 +69,8 @@ public class RecordBegin : MonoBehaviour, IRunnable
             }
 
             //foreach (VideoCapture vc in VC) vc.customPathFolder = RecordingEventListener.ExportPath();
+
+            // For each of the videos captured, classify them as screen recordings or camera recordings and 
             foreach (GameObject o in GameObject.FindGameObjectsWithTag("RecordCam"))
             {
                 if (o.GetComponent<VideoCapture>().captureSource == CaptureSource.CAMERA)

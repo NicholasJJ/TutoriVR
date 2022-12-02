@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Creates a camera instance
+/// </summary>
 public class ReplicatorCam : MonoBehaviour
 {
     public GameObject cam;
