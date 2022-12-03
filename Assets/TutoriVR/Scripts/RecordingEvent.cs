@@ -12,6 +12,9 @@ public class RecordingEvent : ScriptableObject
     private List<RecordingEventListener> listeners = new List<RecordingEventListener>();
     private bool recording = false;
 
+    /// <summary>
+    /// sets recording to false
+    /// </summary>
     private void OnEnable()
     {
         recording = false;

@@ -30,18 +30,18 @@ public class TrackButtons : RecordingEventListener
     private float recordingStartTime;
     [SerializeField] GameObject tracker;
 
-    public void fStart()
-    {
+    // public void fStart()
+    // {
         //captures = new Dictionary<int, ButtonInstance>();
-    }
+    // }
 
-    public void fUpdate()
-    {
+    // public void fUpdate()
+    // {
         //Debug.Log("HERE!!!");
        // binstance = new ButtonInstance();
         //captures[Time.frameCount] = binstance.createInstance();
         //Debug.Log(Time.frameCount + " " + captures[Time.frameCount].brushtype);
-    }
+    // }
 
     /// <summary>
     /// Creates ledger for recording controller + scene information and sets the time

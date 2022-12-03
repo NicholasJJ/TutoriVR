@@ -23,7 +23,6 @@ public class SendRecordAlert : MonoBehaviour, IRunnable
     /// <summary>
     /// Records the alert with the chosen color of the alert
     /// </summary>
-    /// <param name="currentpoint"></param>
     public void Run(Vector3 currentpoint)
     {
         recorder.RecordNewAlert(alertColor);

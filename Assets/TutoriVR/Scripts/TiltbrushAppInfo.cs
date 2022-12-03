@@ -52,7 +52,7 @@ public class TiltbrushAppInfo : MonoBehaviour, IAppInfo
     }
 
     /// <summary>
-    /// Every frame, updates the pointers to controllers if set to null and the parent of their transform is not 
+    /// Every frame, updates the pointers to controllers if they are null and the parent of their transform is not 
     /// UnityXRUnitializedControls(Clone) AND updates the status of the triggers and buttons based on the input
     /// from the controllers.
     /// </summary>

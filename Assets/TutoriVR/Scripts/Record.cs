@@ -21,10 +21,9 @@ public class Record : MonoBehaviour, IRunnable
     private bool currentstate;
 
     // [SerializeField] VideoCapture VC;
-    // Start is called before the first frame update
     /// <summary>
-    /// Creates the record button with its children active
-    /// Set position and rotation based on that of the record button
+    /// On start, children and the recording button are deactivated.
+    /// Material is updated to be the recordButton. 
     /// </summary>
     void Start()
     {
@@ -39,7 +38,7 @@ public class Record : MonoBehaviour, IRunnable
 
     /// <summary>
     /// Set the record button's parent as the left controller 
-    /// Update position and rotation based on record button position/rotation
+    /// Update position and rotation relative to the controller
     /// </summary>
     void Update()
     {
@@ -53,9 +52,8 @@ public class Record : MonoBehaviour, IRunnable
     }
     
     /// <summary>
-    /// Makes all the children active/inactive
+    /// Makes all the children active
     /// </summary>
-    /// <param name="setting">Setting for whether the children should be active or not</param>
     private void SetChildrenActive(bool setting)
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -65,9 +63,8 @@ public class Record : MonoBehaviour, IRunnable
     }
 
     /// <summary>
-    /// Display appropriate options for starting or stopping the recording based on the current settings
+    /// Deactivates children and changes material of button based on current state.
     /// </summary>
-    /// <param name="currentpoint"></param>
     public void Run(Vector3 currentpoint)
     {
         SetChildrenActive(!currentstate);

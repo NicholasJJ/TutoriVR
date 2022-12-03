@@ -7,9 +7,9 @@ using System.IO;
 /// All implementations of RecordingEventListener will contain a list of listeners
 /// that will record information during a recording that needs to be specified in
 /// the implementation (not in this class). After the recording is over, all of the
-/// information recording will be saved as JSON files to the same folder in /CaptureAt + RecordID
+/// information for the recording will be saved as JSON files to the same folder in /CaptureAt + RecordID
 /// in order to differentiate between different recordings. RecordID is specified before
-/// by the user before the recording begins.
+/// by the user before the recording begins. Read RecordingEvent.cs for better context.
 /// </summary>
 public abstract class RecordingEventListener : MonoBehaviour
 {
@@ -21,8 +21,6 @@ public abstract class RecordingEventListener : MonoBehaviour
     /// Writes the information in argument "json" to the file in the /CaptureAt +
     /// RecordID folder
     /// </summary>
-    /// <param name="name"></param>
-    /// <param name="json"></param>
     public static void ExportJson(string name, string json) 
     {
         string d = Application.persistentDataPath + "/CaptureAt" + recordID;
@@ -63,6 +61,10 @@ public abstract class RecordingEventListener : MonoBehaviour
         Event.UnregisterListener(this);
     }
 
+    /// <summary>
+    /// Records information based on status of Event (that is keeping 
+    /// track of the listeners)
+    /// </summary>
     public void OnRecordRaised()
     {
         Debug.Log("Record Raised");
@@ -75,6 +77,9 @@ public abstract class RecordingEventListener : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Records information at every frame if Event is recording.
+    /// </summary>
     private void Update()
     {
         //Debug.Log(Event.isRecording());

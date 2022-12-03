@@ -19,9 +19,10 @@ public class RecordBegin : MonoBehaviour, IRunnable
     private IAppInfo appInfo;
     
     VideoCapture[] VC;
-    // Start is called before the first frame update
+
     /// <summary>
-    /// Captures each recording frame and stores it in an array
+    /// Finds all objects with RecordCam tag and adds them to list for
+    /// future reference.
     /// </summary>
     void Start()
     {
@@ -40,10 +41,9 @@ public class RecordBegin : MonoBehaviour, IRunnable
     /// <summary>
     /// Check if the user is currently recording or not.
     /// If they are not recording, store the contents of the recording in a folder.
-    /// Otherwise, capture the screen or camera.
+    /// Otherwise, capture the picture from all objects with the RecordCam tag.
     /// Change the start/stop buttons displays accordingly.
     /// </summary>
-    /// <param name="currentpoint"></param>
     public void Run(Vector3 currentpoint)
     {
         Debug.Log("Clicked");

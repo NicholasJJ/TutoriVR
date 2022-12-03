@@ -4,7 +4,8 @@ using UnityEngine;
 using Evereal.VRVideoPlayer;
 
 /// <summary>
-/// Zoombar increases/decreases field of view of camera depending on where selected
+/// Zoombar increases/decreases field of view of camera showing the 3d recorded
+/// brush strokes on the perspective thumbnail.
 /// </summary>
 public class ZoomBar : BarBase, IRunnable
 {
@@ -30,9 +31,9 @@ public class ZoomBar : BarBase, IRunnable
     }
 
     /// <summary>
-    /// Change the field of view based on the current width and progress bar in OpenBrush
+    /// Change the field of view by selecting the zoom bar based on where the
+    /// current point is located on it.
     /// </summary>
-    /// <param name="currentPoint"></param>
     public void Run(Vector3 currentPoint)
     {
         float currentWidth = Vector3.Distance(startPoint.position, currentPoint);

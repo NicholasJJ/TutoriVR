@@ -39,7 +39,7 @@ public class TutoriRaycastManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates class variables to contain reference the transform of the controllers and calls checkRay.
+    /// Updates references to the transform of the controllers and calls checkRay.
     /// Also updates the color of objects that were selected and their colors stored in regColor. Removes
     /// objects from regColor that are not selected.
     /// </summary>

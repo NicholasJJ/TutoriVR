@@ -33,7 +33,7 @@ public class SetPlayerPositionRecreation : MonoBehaviour, IRunnableHold
     /// on the position of the right controller and remain in the same position
     /// starting from the next frame.
     /// </summary>
-    /// <returns>yield return null in order pause execution in the current
+    /// <returns>yield return null in order to pause execution in the current
     /// frame after centering the widgets</returns>
     IEnumerator Held()
     {

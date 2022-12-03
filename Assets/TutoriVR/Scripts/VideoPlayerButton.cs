@@ -30,13 +30,16 @@ public class VideoPlayerButton : MonoBehaviour, IRunnable
     public ReplicatorCam repCam;
     //public GameObject record_begin_button;
 
-    // Start is called before the first frame update
     // [SerializeField] VideoCapture VC;
+    /// <summary>
+    /// On start, children are deactivated if any exist, current state is set to false, and the material
+    /// of the button is set to show.
+    /// </summary>
     void Start()
     {
         SetChildrenActive(false);
         currentstate = false;
-         gameObject.GetComponent<Renderer>().material = showButton;   
+        gameObject.GetComponent<Renderer>().material = showButton;   
     }
     
     /// <summary>

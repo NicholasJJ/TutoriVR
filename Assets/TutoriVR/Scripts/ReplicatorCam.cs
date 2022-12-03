@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Creates a camera instance
+/// Script attached to the camera inside of the Perspective Viewer.
 /// </summary>
 public class ReplicatorCam : MonoBehaviour
 {
@@ -13,7 +13,6 @@ public class ReplicatorCam : MonoBehaviour
     {
         
     }
-
 
     //void Update()
     //{
