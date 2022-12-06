@@ -30,8 +30,8 @@ public class MicAudioController : MonoBehaviour
 
     /// <summary>
     /// Gets the audio from the specific file, and plays it
+    /// starting from the next frame.
     /// </summary>
-    /// <returns>Yields the file</returns>
     public IEnumerator LoadAudio()
     {
         WWW request = GetAudioFromFile("file://" + soundPath, audioName);
@@ -46,8 +46,6 @@ public class MicAudioController : MonoBehaviour
     /// <summary>
     /// Reformats the filename with the other part of the path, and makes the request to get the file
     /// </summary>
-    /// <param name="path"></param>
-    /// <param name="filename"></param>
     /// <returns>The file from the specified path</returns>
     private WWW GetAudioFromFile(string path, string filename)
     {
@@ -58,7 +56,7 @@ public class MicAudioController : MonoBehaviour
     }
 
     /// <summary>
-    /// Plays the whole audio clip
+    /// Plays the whole audio clip starting from the beginning.
     /// </summary>
     public void PlayAudioFile()
     {
@@ -71,7 +69,6 @@ public class MicAudioController : MonoBehaviour
     /// <summary>
     /// Pauses the video and sets the time for that audio source to start at the paused time.
     /// </summary>
-    /// <param name="t"></param>
     public void SetTime(float t)
     {
         //Debug.Log(t);

@@ -43,7 +43,6 @@ public class RecordAlerts : RecordingEventListener
     /// <summary>
     /// Makes all the bookmarks active/inactive depending on the setting
     /// </summary>
-    /// <param name="setting"></param>
     private void SetChildrenActive(bool setting)
     {
         for (int i = 0; i < transform.childCount; i++)

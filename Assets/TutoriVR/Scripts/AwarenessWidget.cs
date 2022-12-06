@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Awareness widget shows the past and future alerts in the timeline.
-/// Moves with user's head, so it stays fixed to the bottom of the screen
+/// Awareness widget shows the past and future alerts in the video player timeline.
+/// Moves with user's head, so it stays fixed to the bottom of the screen. This widget
+/// is intended to always be in view to the user when the video is playing.
 /// </summary>
 public class AwarenessWidget : MonoBehaviour
 {
@@ -24,10 +25,9 @@ public class AwarenessWidget : MonoBehaviour
         appInfo = transform.parent.GetComponentInParent<IAppInfo>();
     }
 
-    // Update is called once per frame
     /// <summary>
-    /// If there is a user currently, get the current position/rotation of the
-    /// head and change position/rotation of the awareness widget to match that.
+    /// If the headset is not null, gets current position/rotation and 
+    /// changes position/rotation of awareness widget to match that.
     /// </summary>
     void Update()
     {

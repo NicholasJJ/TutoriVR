@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Adding alerts with time and color into the time progress bar, and convert to JSON
-
 /// <summary>
 /// Alerts are specific points on the video progress bar that the tutor wants to highlight.
 /// They contain two attributes, the time that they occur at and the color that they will show up as on the timeline.
@@ -36,7 +34,7 @@ public class ListLedger
 }
 
 /// <summary>
-/// AlertLedger class contains options for recording alert times, starting the video recording again, and converting the video to JSON upon completion.
+/// AlertLedger class contains options for recording alert times, restarting the video recording, and converting the video to JSON upon completion.
 /// </summary>
 [CreateAssetMenu]
 public class AlertLedger : ScriptableObject
@@ -47,7 +45,7 @@ public class AlertLedger : ScriptableObject
     public ListLedger recordedAlerts = new ListLedger();
 
     /// <summary>
-    /// Restarts the recording
+    /// Restarts the recording by deleting previously recorded alerts
     /// </summary>
     public void Restart()
     {
@@ -57,8 +55,8 @@ public class AlertLedger : ScriptableObject
 
     /// <summary>
     /// Creates a new Alert at the current time with a specified color if the recording is currently happening
+    /// and adds to the list of recorded alerts.
     /// </summary>
-    /// <param name="color"></param>
     public void RecordNewAlert(ColoredAlert color)
     {
         if (Event.isRecording())
@@ -68,7 +66,7 @@ public class AlertLedger : ScriptableObject
     }
 
     /// <summary>
-    /// Gets each of the alert times and the total time of the video
+    /// Gets the list of recorded alerts and the total time of the video and converts to JSON
     /// </summary>
     /// <returns> Returns the alerts and total time of the video as a JSON </returns>
     public string toJSON()

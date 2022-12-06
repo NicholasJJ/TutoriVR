@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Class for starting and ending the game
+/// Adds a death attribute to gameobject.
 /// </summary>
 public class DestroyAfterTime : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class DestroyAfterTime : MonoBehaviour
     float birth;
 
     /// <summary>
-    /// Sets the starting time for the game
+    /// Sets the starting time for the gameobject
     /// </summary>
     void Start()
     {
@@ -19,7 +19,7 @@ public class DestroyAfterTime : MonoBehaviour
     }
 
     /// <summary>
-    /// If the current time is larger than the whole lifetime of the game, destroy it
+    /// If the gameobject's lifespan has been passed, destroy it
     /// </summary>
     void Update()
     {

@@ -32,12 +32,10 @@ public class ButtonInstance
     public GameObject tracker;
 
     /// <summary>
-    /// Gets the scene center data for the current frame
+    /// Records all information regarding the tracker passed in to be used in replicating
+    /// movements/colors in recordings.
     /// </summary>
-    /// <param name="appInfo"></param>
-    /// <param name="timeStamp"></param>
-    /// <param name="tracker"></param>
-    /// <returns></returns>
+    /// <returns>The button information</returns>
     public ButtonInstance createInstance(IAppInfo appInfo, float timeStamp, GameObject tracker)
     {
         time = timeStamp;
@@ -80,9 +78,6 @@ public class ButtonInstance
     /// <summary>
     /// Gets the current position and rotation for the controllers
     /// </summary>
-    /// <param name="t"></param>
-    /// <param name="root"></param>
-    /// <param name="tracker"></param>
     /// <returns>Returns the position/rotation of the controllers</returns>
     private (Vector3, Quaternion) getRelativePosRot(Transform t, Transform root, GameObject tracker)
     {

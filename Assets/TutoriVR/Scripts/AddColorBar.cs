@@ -4,12 +4,10 @@ using UnityEngine;
 using System.Collections;
 using System;
 
-
 /// <summary>
 /// Creates bar showing how far along the user is in the tutorial video.
 /// Red indicates the current %, and the rest of the video remaining is gray.
 /// </summary>
-
 // [RequireComponent(typeof(Camera))]
 public class AddColorBar : MonoBehaviour
 {
@@ -25,7 +23,7 @@ public class AddColorBar : MonoBehaviour
     private float time;
     
     /// <summary>
-    /// Set how far along the user is in the video
+    /// Create texture and sprite for the video player progress bar.
     /// </summary>
     void Start()
     {
@@ -34,9 +32,13 @@ public class AddColorBar : MonoBehaviour
         totTime = 10f;
         point = time/totTime;
         //  Debug.Log(gameObject.GetComponent<SpriteRenderer> ().sprite.texture.width);
-        Texture2D characterTexture2D = CopyTexture2D(gameObject.GetComponent<SpriteRenderer> ().sprite.texture,point,Color.red);
+        
+        // copies default grey rectangle sprite?
+        Texture2D characterTexture2D = CopyTexture2D(gameObject.GetComponent<SpriteRenderer>().sprite.texture,point,Color.red);
         /*
-        Get your SpriteRenderer, get the name of the old sprite,  create a new sprite, name the sprite the old name, and then update the material. If you have multiple sprites, you will want to do this in a loop- which I will post later in another post.
+        Get your SpriteRenderer, get the name of the old sprite, 
+        create a new sprite, name the sprite the old name, and then update the material.
+        If you have multiple sprites, you will want to do this in a loop- which I will post later in another post.
         */
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         string tempName = "color Bar";
@@ -46,12 +48,12 @@ public class AddColorBar : MonoBehaviour
         // sr.material.shader = Shader.Find ("Sprites/Transparent Unlit");
 
     }
-    ///
+
     /// <summary>
-    /// Makes pixels of the progress bar red or grey depending on whether that portion of the video has already been watched.
+    /// Makes texture grey everywhere except near x_p (0 - 1) where it will be red.
     /// </summary>
-    /// <returns>A Texture2D progress bar with the correct pixel colors</returns>
-public Texture2D CopyTexture2D(Texture2D copiedTexture, float x_p, Color cl)
+    /// <returns>Resulting texture based on parameters</returns>
+    public Texture2D CopyTexture2D(Texture2D copiedTexture, float x_p, Color cl)
     {
         //Create a new Texture2D, which will be the copy.
 
@@ -104,6 +106,4 @@ public Texture2D CopyTexture2D(Texture2D copiedTexture, float x_p, Color cl)
         /* Return the variable, so you have it to assign to a permanent variable and so you can use it. */
         return texture;
     }
- 
- 
 }

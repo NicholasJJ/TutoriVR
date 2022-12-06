@@ -11,7 +11,10 @@ public class AlertsButton : MonoBehaviour, IRunnable
     public GameObject awareness_widget;
     private bool currentstate;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// On start, awareness widget is hidden since no video recording is
+    /// being played.
+    /// </summary>
     void Start()
     {
         currentstate = false;
@@ -24,9 +27,9 @@ public class AlertsButton : MonoBehaviour, IRunnable
     }
 
     /// <summary>
-    /// Toggles whether the awareness widget is on or off
+    /// Toggles whether the awareness widget is on or off. Intended 
+    /// to be on when the recorded video is playing.
     /// </summary>
-    /// <param name="currentPoint"></param>
     public void Run(Vector3 currentPoint)
     {
         currentstate = !currentstate;
@@ -40,5 +43,4 @@ public class AlertsButton : MonoBehaviour, IRunnable
 
         }
     }
-
-   }
+}

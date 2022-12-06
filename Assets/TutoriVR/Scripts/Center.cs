@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Not used anywhere. Ignore for now.
+/// </summary>
 public class Center : MonoBehaviour
 {
     //public GameObject L;

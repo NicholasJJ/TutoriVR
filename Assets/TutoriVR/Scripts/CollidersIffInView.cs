@@ -18,7 +18,7 @@ public class CollidersIffInView : MonoBehaviour
     }
 
     /// <summary>
-    /// Find the collider and enable it if in view
+    /// If headset is not null and object is in view, enable colliders
     /// </summary>
     void Update()
     {
@@ -40,7 +40,7 @@ public class CollidersIffInView : MonoBehaviour
     }
 
     /// <summary>
-    /// Changes whether the object is enabled based on whether it is in view
+    /// Changes whether the object can be collided with based on whether it is in view
     /// </summary>
     /// <param name="setting">Variable indicating whether the object should be enabled for collision or not</param>
     void SetCollidersEnabled(bool setting)

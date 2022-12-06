@@ -80,7 +80,6 @@ public class trackController : MonoBehaviour
             }
             brushWasDown = buttonList[index].rightTriggerDown;
         }
-        
     }
 
     /// <summary>

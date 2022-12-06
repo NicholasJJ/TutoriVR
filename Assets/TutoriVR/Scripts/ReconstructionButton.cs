@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Toggles the perspective widget active state
-/// Perspective widget is used to understand stroke structure and controller interactions
-/// The created stroke can be rotated 360 degrees around the stroke and zoomed in/out of
+/// Toggles the perspective widget active state. The perspective widget is responsible
+/// for replicating the handstrokes from previous recordings.
 /// </summary>
 public class ReconstructionButton : MonoBehaviour, IRunnable
 {
@@ -32,7 +31,6 @@ public class ReconstructionButton : MonoBehaviour, IRunnable
     /// <summary>
     /// Toggles whether the perspective widget is on or off based on its current state
     /// </summary>
-    /// <param name="currentPoint"></param>
     public void Run(Vector3 currentPoint)
     {
         currentstate = !currentstate;
