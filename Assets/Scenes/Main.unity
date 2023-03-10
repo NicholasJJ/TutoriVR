@@ -35984,6 +35984,10 @@ PrefabInstance:
       value: VideoCapture (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1477427471153750, guid: 8fa59c0c9387c3d428a0a4989b7d1cb3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477427471153750, guid: 8fa59c0c9387c3d428a0a4989b7d1cb3, type: 3}
       propertyPath: m_TagString
       value: RecordCam
       objectReference: {fileID: 0}
@@ -39171,6 +39175,10 @@ PrefabInstance:
       value: VideoCapture
       objectReference: {fileID: 0}
     - target: {fileID: 1477427471153750, guid: 8fa59c0c9387c3d428a0a4989b7d1cb3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477427471153750, guid: 8fa59c0c9387c3d428a0a4989b7d1cb3, type: 3}
       propertyPath: m_TagString
       value: RecordCam
       objectReference: {fileID: 0}
@@ -39514,6 +39522,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TutoriWidgets
+      objectReference: {fileID: 0}
+    - target: {fileID: 3100108756367445100, guid: 4cefd3d137eabaa44bd583fce191f27f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100108756367445101, guid: 4cefd3d137eabaa44bd583fce191f27f,
         type: 3}
