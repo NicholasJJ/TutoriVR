@@ -46,6 +46,12 @@ public class RecordBegin : MonoBehaviour, IRunnable
     /// </summary>
     public void Run(Vector3 currentpoint)
     {
+        // activates bookmark buttons
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(true);
+        }
+
         Debug.Log("Clicked");
         Event.Raise();
         //if not currently recording, stop each of the cameras and save the recordings in a folder

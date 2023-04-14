@@ -69,15 +69,18 @@ public class Record : MonoBehaviour, IRunnable
     {
         SetChildrenActive(!currentstate);
         currentstate = !currentstate;
+        
+        /* OLD CODE
         if (currentstate==false)
         {
-         
         gameObject.GetComponent<Renderer>().material = recordButton;   
         }
         else
-        {gameObject.GetComponent<Renderer>().material = stopButton;   
-
+        {
+            gameObject.GetComponent<Renderer>().material = stopButton;   
         }
+        */
+
         // Event.Raise();
         // if (!Event.isRecording())
         // {
