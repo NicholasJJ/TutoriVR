@@ -46,15 +46,10 @@ public class RecordBegin : MonoBehaviour, IRunnable
     /// </summary>
     public void Run(Vector3 currentpoint)
     {
-        // activates bookmark buttons
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            transform.GetChild(i).gameObject.SetActive(true);
-        }
 
         Debug.Log("Clicked");
         Event.Raise();
-        //if not currently recording, stop each of the cameras and save the recordings in a folder
+        //if not currently recording, stop each of the cameras and save the recordings in a folder, else record
         if (!Event.isRecording())
         {
             foreach (GameObject o in GameObject.FindGameObjectsWithTag("RecordCam"))
@@ -64,6 +59,15 @@ public class RecordBegin : MonoBehaviour, IRunnable
             gameObject.GetComponent<Renderer>().material = recordButton;
             Debug.Log("Save & Export");
             //video_begin_button.SetActive(true);
+
+            // hide bookmark buttons
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(false);
+            }
+
+            // show menu options
+            ChangeMenuVisibility(true);
         }
         else
         {
@@ -88,6 +92,15 @@ public class RecordBegin : MonoBehaviour, IRunnable
                 Debug.Log("in here");
                 o.GetComponent<VideoCapture>().StartCapture();
                 o.GetComponent<FollowHMD>().enabled = true;
+
+                // activates bookmark buttons
+                for (int i = 0; i < transform.childCount; i++)
+                {
+                    transform.GetChild(i).gameObject.SetActive(true);
+                }
+
+                // hide menu options
+                ChangeMenuVisibility(false);
             }
 
 
@@ -99,4 +112,15 @@ public class RecordBegin : MonoBehaviour, IRunnable
             Debug.Log("Start Recording");
         }
     }
+
+    /// <summary>
+    ///  Changes visibility of Back and View Recordings Buttons to given setting
+    /// </summary>
+    public void ChangeMenuVisibility(bool setting) {
+        // back button
+        transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = setting;
+
+        // view recordings button
+        transform.GetChild(1).gameObject.GetComponent<Renderer>().enabled = setting;
+    }   
 }

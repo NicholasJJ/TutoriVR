@@ -67,10 +67,16 @@ public class Record : MonoBehaviour, IRunnable
     /// </summary>
     public void Run(Vector3 currentpoint)
     {
-        SetChildrenActive(!currentstate);
+        // activates children, hides self
+        SetChildrenActive(true);
+        gameObject.GetComponent<Renderer>().enabled = false;   
+
         currentstate = !currentstate;
         
         /* OLD CODE
+        SetChildrenActive(!currentstate);
+        currentstate = !currentstate;
+
         if (currentstate==false)
         {
         gameObject.GetComponent<Renderer>().material = recordButton;   

@@ -26,10 +26,11 @@ public class Back : MonoBehaviour, IRunnable
     public void Run(Vector3 currentpoint)
     {
         Debug.Log("Pressed Back");
+        transform.parent.gameObject.GetComponent<Renderer>().enabled = true;
+
         for (int i = 0; i < transform.parent.childCount; i++)
         {
             transform.parent.GetChild(i).gameObject.SetActive(false);
         }
-        transform.parent.gameObject.GetComponent<Renderer>().enabled = true;
     }
 }

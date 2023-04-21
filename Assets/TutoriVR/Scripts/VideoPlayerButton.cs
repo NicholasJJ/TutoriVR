@@ -148,11 +148,24 @@ public class VideoPlayerButton : MonoBehaviour, IRunnable
         {
             gameObject.GetComponent<Renderer>().material = showButton;
             //record_begin_button.SetActive(true);
+            ChangeMenuVisibility(false);
         }
         else
         {
             gameObject.GetComponent<Renderer>().material = closeButton;
             //record_begin_button.SetActive(false);
+            ChangeMenuVisibility(true);
         }
     }
+
+    /// <summary>
+    ///  Changes visibility of Back and View Recordings Buttons to given setting
+    /// </summary>
+    public void ChangeMenuVisibility(bool setting) {
+        // back button
+        transform.GetChild(0).gameObject.GetComponent<Renderer>().enabled = setting;
+
+        // start record button
+        transform.GetChild(2).gameObject.GetComponent<Renderer>().enabled = setting;
+    }   
 }
