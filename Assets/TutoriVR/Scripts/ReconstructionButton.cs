@@ -6,9 +6,10 @@ using UnityEngine;
 /// Toggles the perspective widget active state. The perspective widget is responsible
 /// for replicating the handstrokes from previous recordings.
 /// </summary>
-public class ReconstructionButton : MonoBehaviour, IRunnable
+public class ReconstructionButton : MonoBehaviour, IRunnable, IRunnableHold
 {
     public GameObject perspective_widget;
+    public GameObject text_hover;
     private bool currentstate;
     // Start is called before the first frame update
 
@@ -17,8 +18,8 @@ public class ReconstructionButton : MonoBehaviour, IRunnable
     /// </summary>
     void Start()
     {
-
         currentstate = false;
+        DeactivateHover();
     }
 
     // Update is called once per frame
@@ -44,4 +45,18 @@ public class ReconstructionButton : MonoBehaviour, IRunnable
 
         }
     }
+
+    public void RunHold(Vector3 currentPoint) {
+        ActivateHover();
+        Invoke("DeactivateHover",1);
+    }
+
+    private void ActivateHover() {
+        text_hover.GetComponent<Renderer>().enabled = true;
+    }
+
+    private void DeactivateHover() {
+        text_hover.GetComponent<Renderer>().enabled = false;
+    }
+
 }

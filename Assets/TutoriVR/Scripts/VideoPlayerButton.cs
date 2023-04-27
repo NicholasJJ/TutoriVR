@@ -11,7 +11,7 @@ using Evereal.VRVideoPlayer;
 /// when run.
 /// </summary>
 // [RequireComponent(typeof(Camera))]
-public class VideoPlayerButton : MonoBehaviour, IRunnable
+public class VideoPlayerButton : MonoBehaviour, IRunnable, IRunnableHold
 {
     [SerializeField] Material showButton;
     [SerializeField] Material closeButton;
@@ -29,6 +29,9 @@ public class VideoPlayerButton : MonoBehaviour, IRunnable
     public GameObject perspective_widget;
     public ReplicatorCam repCam;
     //public GameObject record_begin_button;
+
+    public GameObject text_hover_view;
+    public GameObject text_hover_close;
 
     // [SerializeField] VideoCapture VC;
     /// <summary>
@@ -148,13 +151,13 @@ public class VideoPlayerButton : MonoBehaviour, IRunnable
         {
             gameObject.GetComponent<Renderer>().material = showButton;
             //record_begin_button.SetActive(true);
-            ChangeMenuVisibility(false);
+            ChangeMenuVisibility(true);
         }
         else
         {
             gameObject.GetComponent<Renderer>().material = closeButton;
             //record_begin_button.SetActive(false);
-            ChangeMenuVisibility(true);
+            ChangeMenuVisibility(false);
         }
     }
 
@@ -167,5 +170,23 @@ public class VideoPlayerButton : MonoBehaviour, IRunnable
 
         // start record button
         transform.GetChild(2).gameObject.GetComponent<Renderer>().enabled = setting;
-    }   
+    }
+
+    public void RunHold(Vector3 currentpoint) {
+        if (!currentstate) {
+            ActivateHover(text_hover_view);
+        } else {
+            ActivateHover(text_hover_close);
+        }
+        Invoke("DeactivateHover",1);
+    } 
+
+    private void ActivateHover(GameObject obj) {
+        obj.GetComponent<Renderer>().enabled = true;
+    }
+
+    private void DeactivateHover() {
+        text_hover_view.GetComponent<Renderer>().enabled = false;
+        text_hover_close.GetComponent<Renderer>().enabled = false;
+    }  
 }
